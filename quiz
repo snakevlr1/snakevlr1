@@ -1,168 +1,142 @@
-perguntas = [
-    {
-        'pergunta': 'Quem foi o rei dos piratas em one piece?',
-        'opções':{
-            'A': 'Naruto',
-            'B': 'Luffy',
-            'C': 'Zoro',
-            'D': 'Gold Roger',
-    'Resposta': 'D',
-},
-    }, 
-    { 
-      'pergunta': 'Quem é saitama?',
-      'opções':{
-            'A': 'Um heroi',
-            'B': 'Um vilão',
-            'C': 'Um monstro',
-            'D': 'Um deus',
-            'Resposta': 'A',
-},
-    },
-    {
-      'pergunta': 'O que Sasuke fez?',
-        'opções':{
-            'A':'Ele traiu a vila',
-            'B':'Ele salvou a vila',
-            'C':'Ele se tornou hokage',
-            'D':'Ele se tornou um vilão',
-            'Resposta': 'A',
-},
-    },
-      {
-      'pergunta': 'Quem é Dante?',
-        'opções':{
-            'A':'Um demonio',
-            'B':'Um heroi',
-            'C':'Um vilão',
-            'D':'Um deus',
-            'Resposta': 'B',
-},
-    },
-      {
-      'pergunta': 'Em bleach, em que ano se passa a guerra dos mil anos?',
-        'opções':{
-            'A':'2000',
-            'B':'2005',
-            'C':'2009',
-            'D':'2030',
-            'Resposta': 'C',
-},
-    },
-      {
-      'pergunta': 'Por que frieren queria tanto buscar por mais magias?',
-        'opções':{
-            'A':'Por que ela queria se tornar mais forte',
-            'B':'Por que ela queria ajudar os outros',
-            'C':'Por que ela queria se vingar',
-            'D':'Por que ela queria se divertir',
-            'Resposta': 'B',
-},
-    },
-     
-      {
-      'pergunta': 'Quem era o melhor amigo de Satoru Gojo?',
-        'opções':{
-            'A':'Nanami',
-            'B':'Sukuna',
-            'C':'Geto',
-            'D':'Megumi',
-            'Resposta': 'C',
-},
-    },
-        {
-      'pergunta': 'Por que Gon procura pelo pai?',
-        'opções':{
-            'A':'ele queria conhecer o pai',
-            'B':'ele queria se vingar',
-            'C':'ele queria se tornar mais forte',
-            'D':'ele queria se divertir',
-            'Resposta': 'A',
-},
-    },
-        {
-      'pergunta': 'Qual o motivo dos gigantes em Attack on titan?',
-        'opções':{
-            'A':'Eles queriam se vingar',
-            'B':'Eles queriam se divertir',
-            'C':'Eles queriam conhecimento',
-            'D':'Eles queriam liberdade',
-            'Resposta': 'D',
-},
-    },
-        {
-      'pergunta': 'Qual era o objetivo de Edward Elric?',
-        'opções':{
-            'A':'Ele queria conhecimento sobre alquimia',
-            'B':'Ele queria se tornar o melhor alquimista',
-            'C':'Ele queria se vingar',
-            'D':'Ele queria trazer sua mãe de volta',
-            'Resposta': 'D',
-},
-    },
-        {
-      'pergunta': 'Por que kuroko era considerado uma sombra?',
-        'opções':{
-            'A':'Ele era invisível',
-            'B':'Ele era rápido',
-            'C':'Ele era forte',
-            'D':'Ele era habilidoso',
-            'Resposta': 'A',
-},
-    },
-       {
-      'pergunta': 'Por que Asta não tinha nenhum poder mago?',
-        'opções':{
-            'A':'Ele era fraco',
-            'B':'Ele era azarado',
-            'C':'Ele foi amaldiçoado',
-            'D':'Ele nasceu sem poder',
-            'Resposta': 'D',
-},
-    },
-      {
-      'pergunta': 'Em solo leveling, Sung JinWoo não ajudou na raid das formigas por qual motivo?',
-        'opções':{
-            'A':'Ele queria ficar com a família',
-            'B':'Ele não queria ajudar',
-            'C':'Ele queria testar os caçadores japoneses',
-            'D':'Ele não tinha poder',
-            'Resposta': 'A',
-},
-    },
-]
-while True:
-  jogar_novamente = input("Iniciar jogo? (S/N): ").upper()
-  if jogar_novamente == 'S':
-    respostas_certas = 0
-    for pergunta in perguntas:
-      print(pergunta['pergunta'])
-      for opcao, resposta in pergunta['opções'].items():
-        if opcao != 'Resposta':  # Oculta a chave 'Resposta'
-          print(f"{opcao}: {resposta}")
-      
-      resposta_usuario = input('Escolha uma opção (Digite a letra da sua resposta): ').upper()
-      
-      if resposta_usuario == pergunta['opções']['Resposta']:
-        print('Você acertou 👍')
-        respostas_certas += 1
-      else:
-        print('Você errou❌')
-        print(f"A resposta correta é: {pergunta['opções']['Resposta']}")
-        print('')
-      print('')
+import tkinter as tk
+from tkinter import messagebox
 
-    print(f"Você acertou {respostas_certas} de {len(perguntas)} perguntas.")
-    print('Fim do jogo!!!')
-    print('Obrigado por jogar🏆🏆')
-    
-    # Pergunta se o jogador quer iniciar um novo jogo
-    novo_jogo = input("Deseja iniciar um novo jogo? (S/N): ").upper()
-    if novo_jogo == 'N':
-      print("Obrigado por jogar! Até a próxima! 👋")
-      break
-  elif jogar_novamente == 'N':
-    print("Obrigado por jogar! Até a próxima! 👋")
-    break
+# Perguntas e respostas
+questions = [
+  {
+    'pergunta': 'Quem foi o rei dos piratas em one piece?',
+    'opções': ['Naruto', 'Luffy', 'Zoro', 'Gold Roger'],
+    'resposta': 'Gold Roger',
+  },
+  {
+    'pergunta': 'Quem é Saitama?',
+    'opções': ['Um herói', 'Um vilão', 'Um monstro', 'Um deus'],
+    'resposta': 'Um herói',
+  },
+  {
+    'pergunta': 'O que Sasuke fez?',
+    'opções': ['Ele traiu a vila', 'Ele salvou a vila', 'Ele se tornou hokage', 'Ele se tornou um vilão'],
+    'resposta': 'Ele traiu a vila',
+  },
+  {
+    'pergunta': 'Quem é Dante?',
+    'opções': ['Um demônio', 'Um herói', 'Um vilão', 'Um deus'],
+    'resposta': 'Um herói',
+  },
+  {
+    'pergunta': 'Em Bleach, em que ano se passa a guerra dos mil anos?',
+    'opções': ['2000', '2005', '2009', '2030'],
+    'resposta': '2009',
+  },
+  {
+    'pergunta': 'Por que Frieren queria tanto buscar por mais magias?',
+    'opções': ['Porque ela queria se tornar mais forte', 'Porque ela queria ajudar os outros', 'Porque ela queria se vingar', 'Porque ela queria se divertir'],
+    'resposta': 'Porque ela queria ajudar os outros',
+  },
+  {
+    'pergunta': 'Quem era o melhor amigo de Satoru Gojo?',
+    'opções': ['Nanami', 'Sukuna', 'Geto', 'Megumi'],
+    'resposta': 'Geto',
+  },
+  {
+    'pergunta': 'Por que Gon procura pelo pai?',
+    'opções': ['Ele queria conhecer o pai', 'Ele queria se vingar', 'Ele queria se tornar mais forte', 'Ele queria se divertir'],
+    'resposta': 'Ele queria conhecer o pai',
+  },
+  {
+    'pergunta': 'Qual o motivo dos gigantes em Attack on Titan?',
+    'opções': ['Eles queriam se vingar', 'Eles queriam se divertir', 'Eles queriam conhecimento', 'Eles queriam liberdade'],
+    'resposta': 'Eles queriam liberdade',
+  },
+  {
+    'pergunta': 'Qual era o objetivo de Edward Elric?',
+    'opções': ['Ele queria conhecimento sobre alquimia', 'Ele queria se tornar o melhor alquimista', 'Ele queria se vingar', 'Ele queria trazer sua mãe de volta'],
+    'resposta': 'Ele queria trazer sua mãe de volta',
+  },
+  {
+    'pergunta': 'Por que Kuroko era considerado uma sombra?',
+    'opções': ['Ele era invisível', 'Ele era rápido', 'Ele era forte', 'Ele era habilidoso'],
+    'resposta': 'Ele era invisível',
+  },
+  {
+    'pergunta': 'Por que Asta não tinha nenhum poder mágico?',
+    'opções': ['Ele era fraco', 'Ele era azarado', 'Ele foi amaldiçoado', 'Ele nasceu sem poder'],
+    'resposta': 'Ele nasceu sem poder',
+  },
+  {
+    'pergunta': 'Em Solo Leveling, Sung JinWoo não ajudou na raid das formigas por qual motivo?',
+    'opções': ['Ele queria ficar com a família', 'Ele não queria ajudar', 'Ele queria testar os caçadores japoneses', 'Ele não tinha poder'],
+    'resposta': 'Ele queria ficar com a família',
+  },
+]
+
+current_question_index = 0
+correct_answers = 0
+
+# Função para carregar a pergunta
+def load_question():
+  global current_question_index
+  question_data = questions[current_question_index]
+  question_label.config(text=question_data["pergunta"])
+  for i, option in enumerate(question_data["opções"]):
+    option_buttons[i].config(text=option, command=lambda opt=option: select_option(opt))
+
+# Função para selecionar uma opção
+def select_option(selected_option):
+  global current_question_index, correct_answers
+  question_data = questions[current_question_index]
+  if selected_option == question_data["resposta"]:
+    correct_answers += 1
+    messagebox.showinfo("Resposta", "Você acertou! 👍")
   else:
-    print("Opção inválida. Por favor, digite 'S' para sim ou 'N' para não.")
+    messagebox.showinfo("Resposta", f"Você errou! ❌ A resposta correta é: {question_data['resposta']}")
+  
+  current_question_index += 1
+  if current_question_index < len(questions):
+    load_question()
+  else:
+    show_result()
+
+# Função para mostrar o resultado
+def show_result():
+  question_label.pack_forget()
+  for button in option_buttons:
+    button.pack_forget()
+  result_label.config(text=f"Você acertou {correct_answers} de {len(questions)} perguntas.")
+  result_label.pack()
+  restart_button.pack()
+
+# Função para reiniciar o quiz
+def restart_quiz():
+  global current_question_index, correct_answers
+  current_question_index = 0
+  correct_answers = 0
+  result_label.pack_forget()
+  restart_button.pack_forget()
+  question_label.pack()
+  for button in option_buttons:
+    button.pack_forget()
+  load_question()
+
+# Configuração da janela principal
+root = tk.Tk()
+root.title("Quiz de Animes")
+
+# Widgets da interface
+question_label = tk.Label(root, text="", font=("Arial", 16), wraplength=400, justify="center")
+question_label.pack(pady=50)
+
+option_buttons = [tk.Button(root, text="", font=("Arial", 14), width=50) for _ in range(4)]
+for button in option_buttons:
+  button.pack(pady=5)
+
+result_label = tk.Label(root, text="", font=("Arial", 16))
+restart_button = tk.Button(root, text="Reiniciar Quiz", font=("Arial", 14), command=restart_quiz)
+exit_button = tk.Button(root, text="Sair do Quiz", font=("Arial", 14), command=root.quit)
+exit_button.pack(pady=10)
+# Carregar a primeira pergunta
+load_question()
+exit_button.pack(side="bottom", pady=20)
+
+# Iniciar o loop principal
+root.mainloop()
