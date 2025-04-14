@@ -1,0 +1,145 @@
+perguntas = [
+    {
+        'pergunta': 'Quem foi o rei dos piratas em one piece?',
+        'opções':{
+            'A': 'Naruto',
+            'B': 'Luffy',
+            'C': 'Zoro',
+            'D': 'Gold Roger',
+    'Resposta': 'D',
+},
+    }, 
+    { 
+      'pergunta': 'Quem é saitama?',
+      'opções':{
+            'A': 'Um heroi',
+            'B': 'Um vilão',
+            'C': 'Um monstro',
+            'D': 'Um deus',
+            'Resposta': 'A',
+},
+    },
+    {
+      'pergunta': 'O que Sasuke fez?',
+        'opções':{
+            'A':'Ele traiu a vila',
+            'B':'Ele salvou a vila',
+            'C':'Ele se tornou hokage',
+            'D':'Ele se tornou um vilão',
+            'Resposta': 'A',
+},
+    },
+      {
+      'pergunta': 'Quem é Dante?',
+        'opções':{
+            'A':'Um demonio',
+            'B':'Um heroi',
+            'C':'Um vilão',
+            'D':'Um deus',
+            'Resposta': 'B',
+},
+    },
+      {
+      'pergunta': 'O que aconteceu em Hiroshima e Nagasaki?',
+        'opções':{
+            'A':'Uma guerra',
+            'B':'Um ataque',
+            'C':'Uma explosão',
+            'D':'Um desastre',
+            'Resposta': 'A',
+},
+    },
+      {
+      'pergunta': 'Quando foi a primeira guerra mundial?',
+        'opções':{
+            'A':'1914',
+            'B':'1918',
+            'C':'1939',
+            'D':'1845',
+            'Resposta': 'A',
+},
+    },
+     
+      {
+      'pergunta': 'Quando foi lançado o primeiro carro no mundo?',
+        'opções':{
+            'A':'1886',
+            'B':'1900',
+            'C':'1910',
+            'D':'1920',
+            'Resposta': 'A',
+},
+    },
+        {
+      'pergunta': 'Quando foi lançado o primeiro video game?',
+        'opções':{
+            'A':'1954',
+            'B':'1980',
+            'C':'1972',
+            'D':'2000',
+            'Resposta': 'C',
+},
+    },
+        {
+      'pergunta': 'Qual foi o primeiro jogo de video game?',
+        'opções':{
+            'A':'Space invaders',
+            'B':'Pacman',
+            'C':'Tetris',
+            'D':'Pong',
+            'Resposta': 'D',
+},
+    },
+        {
+      'pergunta': 'Quem criou o primeiro computador do mundo?',
+        'opções':{
+            'A':'Alan turing',
+            'B':'Charles babbage',
+            'C':'Bill gates',
+            'D':'Steve Jobs',
+            'Resposta': 'B',
+},
+    },
+        {
+      'pergunta': 'Quando foi criado o basquete?',
+        'opções':{
+            'A':'1950',
+            'B':'1900',
+            'C':'1891',
+            'D':'1879',
+            'Resposta': 'C',
+},
+    },
+       {
+      'pergunta': 'Quando foi criada a primeira linguagem de programação?',
+        'opções':{
+            'A':'1950',
+            'B':'1960',
+            'C':'1922',
+            'D':'1843',
+            'Resposta': 'D',
+},
+    },
+]
+respostas_certas = 0
+
+for pergunta in perguntas:
+    print(pergunta['pergunta'])
+    for opcao, resposta in pergunta['opções'].items():
+        if opcao != 'Resposta':  # Oculta a chave 'Resposta'
+            print(f"{opcao}: {resposta}")
+    
+    resposta_usuario = input('Escolha uma opção (Digite a letra da sua resposta): ').upper()
+    
+    if resposta_usuario == pergunta['opções']['Resposta']:
+        print('Você acertou 👍')
+        respostas_certas += 1
+    else:
+        print('Você errou❌')
+        print(f"A resposta correta é: {pergunta['opções']['Resposta']}")
+        print('')
+    print('')
+
+print(f"Você acertou {respostas_certas} de {len(perguntas)} perguntas.")
+print('Fim do jogo!!!')
+print('Obrigado por jogar🏆🏆')
