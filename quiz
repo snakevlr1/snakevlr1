@@ -131,25 +131,38 @@ perguntas = [
 },
     },
 ]
-respostas_certas = 0
-
-for pergunta in perguntas:
-    print(pergunta['pergunta'])
-    for opcao, resposta in pergunta['opções'].items():
+while True:
+  jogar_novamente = input("Iniciar jogo? (S/N): ").upper()
+  if jogar_novamente == 'S':
+    respostas_certas = 0
+    for pergunta in perguntas:
+      print(pergunta['pergunta'])
+      for opcao, resposta in pergunta['opções'].items():
         if opcao != 'Resposta':  # Oculta a chave 'Resposta'
-            print(f"{opcao}: {resposta}")
-    
-    resposta_usuario = input('Escolha uma opção (Digite a letra da sua resposta): ').upper()
-    
-    if resposta_usuario == pergunta['opções']['Resposta']:
+          print(f"{opcao}: {resposta}")
+      
+      resposta_usuario = input('Escolha uma opção (Digite a letra da sua resposta): ').upper()
+      
+      if resposta_usuario == pergunta['opções']['Resposta']:
         print('Você acertou 👍')
         respostas_certas += 1
-    else:
+      else:
         print('Você errou❌')
         print(f"A resposta correta é: {pergunta['opções']['Resposta']}")
         print('')
-    print('')
+      print('')
 
-print(f"Você acertou {respostas_certas} de {len(perguntas)} perguntas.")
-print('Fim do jogo!!!')
-print('Obrigado por jogar🏆🏆')
+    print(f"Você acertou {respostas_certas} de {len(perguntas)} perguntas.")
+    print('Fim do jogo!!!')
+    print('Obrigado por jogar🏆🏆')
+    
+    # Pergunta se o jogador quer iniciar um novo jogo
+    novo_jogo = input("Deseja iniciar um novo jogo? (S/N): ").upper()
+    if novo_jogo == 'N':
+      print("Obrigado por jogar! Até a próxima! 👋")
+      break
+  elif jogar_novamente == 'N':
+    print("Obrigado por jogar! Até a próxima! 👋")
+    break
+  else:
+    print("Opção inválida. Por favor, digite 'S' para sim ou 'N' para não.")
