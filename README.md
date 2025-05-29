@@ -17,7 +17,7 @@
 <img align="center" alt="html" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
 <img align="center" alt="html" src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=whitee" />
 <img align="center" alt="html" src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
-<img align="center" alt="html" src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white    " />    
+<img align="center" alt="html" src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />    
 </div><br/>
 
 Sou amante de jogos e tecnologia, gosto de entender como funciona a tecnologia em geral e aprofundar nela. Estou estudando atualmente Unity 2D/3D e terminando faculdade de Análise de sistemas. Meu foco é evoluir em criação de jogos como GameDev.
