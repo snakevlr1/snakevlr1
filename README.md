@@ -22,7 +22,7 @@
           
 </div><br/>
 
-- Hoje atualmente trabalho como freelancer. Front end 💻
+- Hoje atualmente trabalho como freelancer. Front end e Back end 💻
 
 - Estudando : Javascript/Unity 2D e 3D 📘
 
